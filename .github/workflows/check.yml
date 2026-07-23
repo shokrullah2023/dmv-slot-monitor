@@ -32,6 +32,8 @@ jobs:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           RUN_ONCE: "1"
           STATE_FILE: state.json
+          # Include same-day openings (drop-everything-and-drive slots)
+          MIN_DAYS: "0"
           # ~1 hour of consecutive failures before the warning push
           ERROR_ALERT_AFTER: "6"
         run: python monitor.py
